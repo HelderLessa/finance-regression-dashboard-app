@@ -1,22 +1,17 @@
 import mongoose from "mongoose";
-// @ts-ignore
-import { loadType } from "@mongoose-currency/mongoose-currency";
 
-const Schema = mongoose.Schema;
-loadType(mongoose);
+const { Schema } = mongoose;
 
 const daySchema = new Schema(
   {
     date: String,
     revenue: {
-      type: mongoose.Types.Currency,
-      currency: "USD",
-      get: (v) => v / 100,
+      type: mongoose.Schema.Types.Decimal128,
+      get: (v) => parseFloat(v.toString()),
     },
     expenses: {
-      type: mongoose.Types.Currency,
-      currency: "USD",
-      get: (v) => v / 100,
+      type: mongoose.Schema.Types.Decimal128,
+      get: (v) => parseFloat(v.toString()),
     },
   },
   { toJSON: { getters: true } }
@@ -26,24 +21,20 @@ const monthSchema = new Schema(
   {
     month: String,
     revenue: {
-      type: mongoose.Types.Currency,
-      currency: "USD",
-      get: (v) => v / 100,
+      type: mongoose.Schema.Types.Decimal128,
+      get: (v) => parseFloat(v.toString()),
     },
     expenses: {
-      type: mongoose.Types.Currency,
-      currency: "USD",
-      get: (v) => v / 100,
+      type: mongoose.Schema.Types.Decimal128,
+      get: (v) => parseFloat(v.toString()),
     },
     operationalExpenses: {
-      type: mongoose.Types.Currency,
-      currency: "USD",
-      get: (v) => v / 100,
+      type: mongoose.Schema.Types.Decimal128,
+      get: (v) => parseFloat(v.toString()),
     },
     nonOperationalExpenses: {
-      type: mongoose.Types.Currency,
-      currency: "USD",
-      get: (v) => v / 100,
+      type: mongoose.Schema.Types.Decimal128,
+      get: (v) => parseFloat(v.toString()),
     },
   },
   { toJSON: { getters: true } }
@@ -52,26 +43,22 @@ const monthSchema = new Schema(
 const KPISchema = new Schema(
   {
     totalProfit: {
-      type: mongoose.Types.Currency,
-      currency: "USD",
-      get: (v) => v / 100,
+      type: mongoose.Schema.Types.Decimal128,
+      get: (v) => parseFloat(v.toString()),
     },
     totalRevenue: {
-      type: mongoose.Types.Currency,
-      currency: "USD",
-      get: (v) => v / 100,
+      type: mongoose.Schema.Types.Decimal128,
+      get: (v) => parseFloat(v.toString()),
     },
     totalExpenses: {
-      type: mongoose.Types.Currency,
-      currency: "USD",
-      get: (v) => v / 100,
+      type: mongoose.Schema.Types.Decimal128,
+      get: (v) => parseFloat(v.toString()),
     },
     expensesByCategory: {
       type: Map,
       of: {
-        type: mongoose.Types.Currency,
-        currency: "USD",
-        get: (v) => v / 100,
+        type: mongoose.Schema.Types.Decimal128,
+        get: (v) => parseFloat(v.toString()),
       },
     },
     monthlyData: [monthSchema],
