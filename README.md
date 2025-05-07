@@ -1,4 +1,4 @@
-# 💰 Finance Dashboard App
+# 💰📊 Finance Dashboard App
 
 A **full-stack MERN Finance Dashboard** featuring **machine learning predictions**. This project includes dynamic charts, interactive data tables, and real-time financial insights. It is built using modern tools such as Vite, Redux Toolkit, Material UI, and Recharts on the frontend, and Node.js, Express, and MongoDB on the backend.
 
