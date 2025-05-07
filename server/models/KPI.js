@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 // @ts-ignore
-import { loadType } from "mongoose-currency";
+import { loadType } from "@mongoose-currency/mongoose-currency";
 
 const Schema = mongoose.Schema;
 loadType(mongoose);
