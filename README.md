@@ -8,7 +8,7 @@ A **full-stack MERN Finance Dashboard** featuring **machine learning predictions
 
 ## 📸 Preview
 
-![Dashboard Screenshot](./client/assets/finanseer-app.jpg)
+![Dashboard Screenshot](./client/assets/finanseerapp.jpg)
 
 ---
 
